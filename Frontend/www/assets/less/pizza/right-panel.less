@@ -1,0 +1,198 @@
+.right-panel {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  margin-left: 20px;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  box-orient: vertical;
+  flex-direction: column;
+  min-width: 300px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: rgba(0,0,0,.2) -3px 3px 10px;
+  z-index: 1000;
+}
+
+.right-panel .orders {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 17px;
+  margin-bottom: 30px;
+  margin-top: 35px;
+
+}
+
+.right-panel .orders .all-orders-title {
+  padding-left: 15px;
+}
+
+.badge {
+  background-color: #ec890e;
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.right-panel .all-orders-clear {
+  float: right;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.right-panel .all-orders-clear {
+  padding-right: 15px;
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, .5);
+}
+
+.right-panel .all-orders {
+  height: 100%;
+  width: 100%;
+  box-sizing: content-box;
+  display: block !important;
+
+  background-color: #F5F5F5;
+}
+
+.right-panel .all-orders .one-order {
+  height: 120px;
+  padding: 20px 61px 10px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  position: relative;
+  overflow: hidden;
+}
+
+.img-aside {
+  position: absolute;
+  right: -48px;
+  top: 15px;
+  border-radius: 50% 0 0 50%;
+  max-height: 96px;
+  max-width: 96px;
+  img {
+    vertical-align: middle;
+    border: 0;
+  }
+}
+
+.right-panel .all-orders .one-order .room-for-order-title .one-order-title {
+  line-height: 16px;
+  font-size: 20px;
+  color: #ec890e;
+}
+
+.room-for-order-title {
+  margin-bottom: 10px;
+}
+
+.right-panel .all-orders .one-order .room-for-order-status {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.right-panel .all-orders .one-order .room-for-order-status .gram-image {
+  margin-left: 15px;
+}
+
+.right-panel .all-orders .one-order .room-for-order-price .one-order-price {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.right-panel .all-orders .one-order .room-for-order-price .one-order-count {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.count-clear {
+  margin-left: 25px;
+  color: #ec890e;
+}
+
+.order-state {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 300px;
+  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+  background-color: white;
+  padding: 10px;
+}
+
+.right-panel .order-state .sum-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.right-panel .order-state .sum-number {
+  font-weight: 700;
+  font-size: 20px;
+  float: right;
+  margin-bottom: 15px;
+}
+
+.right-panel .order-state .do-order-button {
+  padding: 20px;
+}
+
+.right-panel .all-orders .no-order-text {
+  font-size: 16px;
+  color: #4e4e4e;
+  text-align: center;
+  padding-top: 50px;
+  display: none;
+}
