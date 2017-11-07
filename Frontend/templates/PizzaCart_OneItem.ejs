@@ -1,10 +1,13 @@
-
+<% var sizeMap = {
+    "big_size" : "Велика",
+    "small_size" : "Мала"
+}%>
 
 
 <div class="one-order">
     <img class="img-aside pizza-icon" alt="Піца" src="<%=pizza.icon%>">
     <div class="room-for-order-title">
-        <span class="one-order-title"><%= pizza.title%></span>
+        <span class="one-order-title"><%= pizza.title %> (<%= sizeMap[size]%>)</span>
     </div>
     <div class="room-for-order-status">
         <img class="diagonal-image" src="assets/images/size-icon.svg">
@@ -26,3 +29,5 @@
         </a>
     </div>
 </div>
+
+
