@@ -1,5 +1,289 @@
-@mainColor: blue;
+@textColor: rgba(12, 12, 12, 0.94);
+@warningColor: #f0ad4e;
+@orderPanelWidth: 330px;
+@infoBarHeight: 90px;
+@smallScreens: ~"only screen and (max-width: 750px)";
 
 @import "pizza/pizza-card";
-@import "pizza/right-panel";
-@import "pizza/navbar";
+@import "cart";
+@import "orderPage";
+
+html{
+  background-color: white;
+}
+
+body{
+  font-family: Vollkorn, Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size: 14px;
+  background-color: #fdffe7;
+  *{
+    color: @textColor;
+  }
+}
+
+p{
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: lighten(@textColor, 10%);
+}
+
+button:focus{
+  outline: none !important;
+}
+
+.disabled{
+  cursor: not-allowed;
+}
+
+.btn-warning{
+  background: darken(@warningColor, 5%);
+  border-color: darken(@warningColor, 10%);
+
+  &:hover{
+    background: darken(@warningColor, 10%);
+    border-color: darken(@warningColor, 5%);
+  }
+}
+
+.top-info-bar{
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  height: @infoBarHeight;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+
+  .header-block{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 120px;
+    height: 100%;
+    width: 100%;
+    min-width: 70px;
+
+    .upper-header{
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      //height: 50%;
+      border-bottom: lighten(@textColor, 60%) solid 1px;
+
+      .login-button{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-right: 0;
+
+      }
+
+      div{
+        vertical-align: baseline;
+        display: inline-block;
+        color: lighten(@textColor, 60%);
+        //margin-left: 15px;
+        padding: 8px;
+      }
+
+      .hotline{
+        padding-left: 0;
+        font-size: 22px;
+      }
+
+      .working-time{
+        font-size: 13px;
+      }
+
+      .delivery-info{
+        font-size: 17px;
+      }
+    }
+
+    .lower-header{
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      .homepage{
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+        line-height: 1px;
+        vertical-align: bottom;
+        font-size: 17px;
+        color: white;
+      }
+    }
+
+  }
+}
+
+.container-fluid{
+  padding-right: @orderPanelWidth + 20px;
+  max-width: 1250px;
+  min-width: 595px;
+  padding-top: 25px;
+}
+
+.navigation-bar{
+  padding-top: @orderPanelWidth / 3;
+  text-align: center;
+  min-width: 295px;
+
+  .btn-filter{
+    background-color: transparent;
+    border: none;
+    color: @titleColor;
+    font-size: 16px;
+
+  }
+
+  .unclicked-btn{
+    &:hover{
+      background-color: rgba(224, 234, 230, 0.63);
+    }
+
+    &:focus{
+      background-color: darken(rgba(224, 234, 230, 0.63), 10%);
+    }
+  }
+
+  .clicked-btn{
+    background-color: lighten(@titleColor, 5%);
+    color:white;
+  }
+}
+
+.amount-label{
+  display: inline-block;
+  border-radius: 20px;
+  box-shadow: 0 -1px 0 #c56300 inset;
+  background-color: #f17f00;
+  margin-top: -10px;
+
+  text-align: center;
+  vertical-align: middle;
+  span{
+    color: white;
+    font-size: 14px;
+    padding: 5px 7px 5px 7px;
+    font-weight: 700;
+    vertical-align: middle;
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  }
+}
+
+.title-text{
+  margin-right: 5px;
+  font-size: 32px;
+  color: lighten(@textColor, 5%);
+}
+
+.visiting-block{
+  display: inline-block;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 8px;
+  width: 100px;
+
+  .bottom-border{
+    transform: rotate(180deg);
+    margin-top: -11px;
+  }
+
+  .content{
+    border: darken(#ea862e, 10%) solid 1px;
+    border-bottom: solid 1px #ea862e;
+    text-align: center;
+    background: #ea862e;
+    padding: 15px;
+
+    .message-block {
+      display: inline-block;
+      width: 85%;
+      text-decoration: none;
+
+      div{
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      div:first-child{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+.discount-block{
+  display: inline-block;
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 8px;
+  width: 100px;
+
+  .top-border{
+    padding-top: 10px;
+  }
+
+  .content {
+    border: darken(#ea862e, 15%) solid 1px;
+    border-top: none;
+    text-align: center;
+    background: #ea862e;
+    font-size: 16px;
+    padding: 7px;
+
+    .message-block{
+      display: inline-block;
+      width: 85%;
+      border-bottom: darken(#ea862e, 15%) dashed 2px;
+    }
+
+    .message-block, .amount{
+      color: white;
+      font-weight: 600;
+    }
+
+    .amount{
+      font-size: 20px;
+    }
+  }
+
+}
+
+footer{
+  padding: 40px;
+  padding-right: @orderPanelWidth + 30px;
+  min-height: 150px;
+  border-top: 1px solid #e1e1e1;
+  background-color: white;
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+
+  p{
+    color: #7c7c7c;
+    line-height: 2em;
+  }
+}
+
+@media @smallScreens{
+
+  .hotline{
+    font-size: 14px !important;
+    padding-bottom: 0 !important;
+    line-height: 1em;
+  }
+
+  .login-button{
+    transform: translateY(90%) !important;
+  }
+}
+
+

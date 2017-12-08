@@ -6,14 +6,19 @@ $(function(){
     //This code will execute when the page is ready
     var PizzaMenu = require('./pizza/PizzaMenu');
     var PizzaCart = require('./pizza/PizzaCart');
-    var Pizza_List = require('./Pizza_List');
+    var OrderPage = require('./order');
+    var backend = require('./API');
 
     PizzaCart.initialiseCart();
-    PizzaMenu.initialiseMenu();
     initFilterBtns(PizzaMenu);
+    PizzaMenu.initialiseMenu();
     $("#clear-cart").click(PizzaCart.clearCart);
+    if (window.location.pathname === '/order.html') {
+        OrderPage.initOrderValidation();
+        OrderPage.initSubmitHandler(PizzaCart, backend);
+        OrderPage.initializeMap();
+    }
 });
-
 
 
 function initFilterBtns(PizzaMenu) {
@@ -29,5 +34,4 @@ function initFilterBtns(PizzaMenu) {
         curr.removeClass("unclicked-btn");
         PizzaMenu.filterPizza(curr.attr('id'));
     });
-    $("#all").click();
 }
